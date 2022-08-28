@@ -11,17 +11,16 @@ assessmentButton.onclick = () => {
   return;
   }
 　
+  // 診断結果表示エリアの作成
   resultDivided.innerText = "";
   tweetDivided.innerText = "";　
   const header = document.createElement('h3');
-  //あと、ここも'h3'の''が抜けてh3だけになってました。
   header.innerText = '診断結果';
   resultDivided.appendChild(header);
 
   const paragraph = document.createElement('p');
   const result = assessment(userName);
   paragraph.innerText = result;
-  //あと、ここもinnerTextでなくinnnerTextになってました。
   resultDivided.appendChild(paragraph);
 
    // ツイートエリアの作成
@@ -84,8 +83,9 @@ const answers =　[
   return result;
 }
 
+//テストコード
 console.assert(
-assessment('太郎')=== assessment('太郎'),
-' 太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
+  assessment('太郎') === 
+  '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
     '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
 );
